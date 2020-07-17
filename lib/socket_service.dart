@@ -1,12 +1,10 @@
 import 'dart:async' show Timer;
 
+import 'package:fluttersocket/config.dart';
 import 'package:websocket_manager/websocket_manager.dart' show WebsocketManager;
 
 class SocketService {
-  final socket = WebsocketManager('ws://10.0.2.2:3000/socket', {
-    'Authorization':
-        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWU4ZjA0N2NhMWNmZDAwMjM3NzIwYjciLCJpYXQiOjE1OTQyNTYxNzMsImV4cCI6MTU5Njg0ODE3M30.ljKkFrmsTeWirfhsd2e8Kbu-IPHhH0o_ZH6ST8dHuMk'
-  });
+  final socket = WebsocketManager(Config.url, {'Authorization': Config.token});
 
   Timer timer;
 
